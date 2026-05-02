@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# environment secrets
+.env
+client/.env
+server/.env
+
+# build output
+dist/
+client/dist/
+build/
+
+# logs
+*.log
+server-dev-error.log
+server-dev-output.log
+server-port-*.log
+client-dev-error.log
+client-dev-output.log
+client-live-error.log
+client-live-output.log
+root-dev-error.log
+root-dev-output.log
+
+# debug/cache
+.chrome-debug/
+.vscode/
+.DS_Store
