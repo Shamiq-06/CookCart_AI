@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
+import { buttonMotion, scaleIn, staggerContainer, staggerItem } from "../utils/animations";
 
 const Register = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -28,10 +30,16 @@ const Register = () => {
 
   return (
     <section className="mx-auto max-w-md px-4 py-12">
-      <form onSubmit={submit} className="panel space-y-4 p-6">
-        <h1 className="text-2xl font-bold">Create Account</h1>
-        {errors.form && <p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700">{errors.form}</p>}
-        <label className="block">
+      <motion.form animate="visible" initial="hidden" onSubmit={submit} className="panel space-y-4 p-6" variants={staggerContainer}>
+        <motion.h1 className="text-2xl font-bold" variants={scaleIn}>Create Account</motion.h1>
+        <AnimatePresence>
+          {errors.form && (
+            <motion.p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700" exit={{ opacity: 0, y: -8 }} initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }}>
+              {errors.form}
+            </motion.p>
+          )}
+        </AnimatePresence>
+        <motion.label className="block" variants={staggerItem}>
           <input
             className={`input ${errors.name ? "input-error" : ""}`}
             placeholder="Name"
@@ -42,8 +50,8 @@ const Register = () => {
             }}
           />
           {errors.name && <p className="field-error">{errors.name}</p>}
-        </label>
-        <label className="block">
+        </motion.label>
+        <motion.label className="block" variants={staggerItem}>
           <input
             className={`input ${errors.email ? "input-error" : ""}`}
             placeholder="Email"
@@ -55,8 +63,8 @@ const Register = () => {
             }}
           />
           {errors.email && <p className="field-error">{errors.email}</p>}
-        </label>
-        <label className="block">
+        </motion.label>
+        <motion.label className="block" variants={staggerItem}>
           <input
             className={`input ${errors.password ? "input-error" : ""}`}
             placeholder="Password"
@@ -68,10 +76,10 @@ const Register = () => {
             }}
           />
           {errors.password && <p className="field-error">{errors.password}</p>}
-        </label>
-        <button className="btn-primary w-full">Register</button>
-        <p className="text-sm text-slate-500">Already registered? <Link className="font-semibold text-leaf" to="/login">Login</Link></p>
-      </form>
+        </motion.label>
+        <motion.button {...buttonMotion} className="btn-primary w-full" variants={staggerItem}>Register</motion.button>
+        <motion.p className="text-sm text-slate-500" variants={staggerItem}>Already registered? <Link className="font-semibold text-leaf" to="/login">Login</Link></motion.p>
+      </motion.form>
     </section>
   );
 };

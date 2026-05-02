@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { CreditCard, Truck } from "lucide-react";
 import api from "../api/axios";
 import { useCart } from "../context/CartContext";
+import { buttonMotion, scaleIn, staggerContainer, staggerItem } from "../utils/animations";
 
 const Checkout = () => {
   const { cart, total } = useCart();
@@ -44,10 +46,16 @@ const Checkout = () => {
 
   return (
     <section className="mx-auto grid max-w-6xl gap-6 px-4 py-10 lg:grid-cols-[1fr_0.8fr]">
-      <div className="panel space-y-5 p-5">
-        <h1 className="text-3xl font-bold">Checkout</h1>
-        {errors.form && <p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700">{errors.form}</p>}
-        <label className="block">
+      <motion.div className="panel space-y-5 p-5" initial="hidden" animate="visible" variants={staggerContainer}>
+        <motion.h1 className="text-3xl font-bold" variants={staggerItem}>Checkout</motion.h1>
+        <AnimatePresence>
+          {errors.form && (
+            <motion.p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700" exit={{ opacity: 0, y: -8 }} initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }}>
+              {errors.form}
+            </motion.p>
+          )}
+        </AnimatePresence>
+        <motion.label className="block" variants={staggerItem}>
           <span className="mb-2 flex items-center gap-2 text-sm font-semibold"><Truck className="h-4 w-4 text-leaf" /> Delivery Address</span>
           <textarea
             className={`input min-h-32 ${errors.deliveryAddress ? "input-error" : ""}`}
@@ -58,30 +66,30 @@ const Checkout = () => {
             }}
           />
           {errors.deliveryAddress && <p className="field-error">{errors.deliveryAddress}</p>}
-        </label>
-        <label className="block">
+        </motion.label>
+        <motion.label className="block" variants={staggerItem}>
           <span className="mb-2 flex items-center gap-2 text-sm font-semibold"><CreditCard className="h-4 w-4 text-leaf" /> Payment Method</span>
           <select className="input" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
             <option>Stripe</option>
             <option>Cash on Delivery</option>
           </select>
-        </label>
-        <button disabled={loading || cart.items.length === 0} className="btn-primary" onClick={pay}>
+        </motion.label>
+        <motion.button {...buttonMotion} disabled={loading || cart.items.length === 0} className="btn-primary" onClick={pay} variants={staggerItem}>
           {loading ? "Redirecting..." : "Pay with Stripe Sandbox"}
-        </button>
-      </div>
-      <aside className="panel h-fit p-5">
+        </motion.button>
+      </motion.div>
+      <motion.aside className="panel h-fit p-5" initial="hidden" animate="visible" variants={scaleIn}>
         <h2 className="text-xl font-bold">Order Summary</h2>
-        <div className="mt-4 space-y-3">
+        <motion.div className="mt-4 space-y-3" variants={staggerContainer}>
           {cart.items.map((item) => (
-            <div className="flex justify-between text-sm" key={item.product || item.name}>
+            <motion.div className="flex justify-between text-sm" key={item.product || item.name} variants={staggerItem}>
               <span>{item.name} x {item.quantity}</span>
               <span>${(item.price * item.quantity).toFixed(2)}</span>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <p className="mt-5 border-t border-slate-100 pt-4 text-lg font-bold">Total: ${total.toFixed(2)}</p>
-      </aside>
+      </motion.aside>
     </section>
   );
 };

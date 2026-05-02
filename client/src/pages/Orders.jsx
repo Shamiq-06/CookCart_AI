@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { ChevronDown, ChefHat, ListChecks, MinusCircle, Save, XCircle } from "lucide-react";
 import api from "../api/axios";
 import RecipeCard from "../components/RecipeCard";
+import { buttonMotion, fadeIn, staggerContainer, staggerItem } from "../utils/animations";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -68,13 +70,18 @@ const Orders = () => {
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-10">
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold">My Orders</h1>
-        <p className="mt-2 text-slate-500">Expand an order to adjust quantities or cancel items while it is still processing.</p>
-      </div>
-      <div className="space-y-4">
+      <motion.div className="mb-6" initial="hidden" animate="visible" variants={staggerContainer}>
+        <motion.h1 className="text-3xl font-bold" variants={staggerItem}>My Orders</motion.h1>
+        <motion.p className="mt-2 text-slate-500" variants={staggerItem}>Expand an order to adjust quantities or cancel items while it is still processing.</motion.p>
+      </motion.div>
+      <motion.div className="space-y-4" initial="hidden" animate="visible" variants={staggerContainer}>
+        {orders.length === 0 && (
+          <motion.div className="panel p-8 text-center text-slate-500" variants={fadeIn}>
+            You do not have any orders yet.
+          </motion.div>
+        )}
         {orders.map((order) => (
-          <article className="panel p-5" key={order._id}>
+          <motion.article className="panel p-5 transition-shadow hover:shadow-soft" key={order._id} variants={staggerItem} whileHover={{ y: -3 }}>
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 className="font-bold">Order #{order._id.slice(-6)}</h2>
@@ -101,19 +108,22 @@ const Orders = () => {
                 )}
               </div>
               <div className="flex flex-wrap gap-2">
-                <button className="btn-secondary" onClick={() => setExpanded(expanded === order._id ? null : order._id)}>
+                <motion.button {...buttonMotion} className="btn-secondary" onClick={() => setExpanded(expanded === order._id ? null : order._id)}>
                   <ChevronDown className="h-4 w-4" /> {expanded === order._id ? "Hide Order" : "Inspect Order"}
-                </button>
+                </motion.button>
                 {["Processing", "Packed"].includes(order.orderStatus) && (
-                  <button className="btn-secondary text-red-600 hover:border-red-200 hover:text-red-700" onClick={() => cancelOrder(order._id)}>
+                  <motion.button {...buttonMotion} className="btn-secondary text-red-600 hover:border-red-200 hover:text-red-700" onClick={() => cancelOrder(order._id)}>
                     <XCircle className="h-4 w-4" /> Cancel Order
-                  </button>
+                  </motion.button>
                 )}
               </div>
             </div>
+            <AnimatePresence>
             {expanded === order._id && (
-              <div className="mt-5 space-y-3 border-t border-slate-100 pt-4">
-                {errors[order._id] && <p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700">{errors[order._id]}</p>}
+              <motion.div className="mt-5 space-y-3 border-t border-slate-100 pt-4" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.28 }}>
+                <AnimatePresence>
+                  {errors[order._id] && <motion.p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}>{errors[order._id]}</motion.p>}
+                </AnimatePresence>
                 {order.recipeSnapshot?.recipeName ? (
                   <div className="rounded-md border border-emerald-100 bg-emerald-50 p-4">
                     <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
@@ -129,13 +139,14 @@ const Orders = () => {
                           Recipe blocked after full cancellation
                         </span>
                       ) : (
-                        <button
+                        <motion.button
+                          {...buttonMotion}
                           className="btn-primary"
                           onClick={() => setRecipeOpen(recipeOpen === order._id ? null : order._id)}
                         >
                           <ListChecks className="h-4 w-4" />
                           {recipeOpen === order._id ? "Hide Recipe Steps" : "View Recipe Steps"}
-                        </button>
+                        </motion.button>
                       )}
                     </div>
                     <div className="mt-4">
@@ -146,16 +157,18 @@ const Orders = () => {
                         ))}
                       </div>
                     </div>
+                    <AnimatePresence>
                     {recipeOpen === order._id && !order.recipeAccessBlocked && (
-                      <div className="mt-5">
+                      <motion.div className="mt-5" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }}>
                         <RecipeCard recipe={order.recipeSnapshot} showCartActions={false} />
-                      </div>
+                      </motion.div>
                     )}
+                    </AnimatePresence>
                   </div>
                 ) : (
-                  <div className="rounded-md bg-slate-50 p-4 text-sm text-slate-500">
+                  <motion.div className="rounded-md bg-slate-50 p-4 text-sm text-slate-500" variants={fadeIn}>
                     This order was not linked to an AI recipe. New checkouts from the AI planner will show recipe details here.
-                  </div>
+                  </motion.div>
                 )}
                 <div>
                   <h3 className="mb-2 font-semibold text-slate-900">Ordered Grocery Items</h3>
@@ -164,7 +177,7 @@ const Orders = () => {
                   const itemId = item._id;
                   const editable = itemId && ["Processing", "Packed"].includes(order.orderStatus) && item.itemStatus !== "Cancelled";
                   return (
-                    <div className={`rounded-md p-3 ${item.itemStatus === "Cancelled" ? "bg-red-50 text-red-800" : "bg-slate-50"}`} key={item._id || item.name}>
+                    <motion.div className={`rounded-md p-3 ${item.itemStatus === "Cancelled" ? "bg-red-50 text-red-800" : "bg-slate-50"}`} key={item._id || item.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
                     <div className="grid gap-3 md:grid-cols-[1fr_auto_auto_auto] md:items-center">
                       <div>
                         <p className="font-semibold">{item.name}</p>
@@ -186,22 +199,23 @@ const Orders = () => {
                         value={quantities[itemId] ?? item.quantity}
                         onChange={(event) => setQuantities({ ...quantities, [itemId]: Number(event.target.value) })}
                       />
-                      <button className="btn-secondary" disabled={!editable} onClick={() => updateItem(order._id, itemId)}>
+                      <motion.button {...buttonMotion} className="btn-secondary" disabled={!editable} onClick={() => updateItem(order._id, itemId)}>
                         <Save className="h-4 w-4" /> Update
-                      </button>
-                      <button className="btn-secondary text-red-600 hover:border-red-200 hover:text-red-700" disabled={!editable} onClick={() => cancelItem(order._id, itemId)}>
+                      </motion.button>
+                      <motion.button {...buttonMotion} className="btn-secondary text-red-600 hover:border-red-200 hover:text-red-700" disabled={!editable} onClick={() => cancelItem(order._id, itemId)}>
                         <MinusCircle className="h-4 w-4" /> Cancel Item
-                      </button>
+                      </motion.button>
                     </div>
                     {errors[itemId] && <p className="field-error">{errors[itemId]}</p>}
-                    </div>
+                    </motion.div>
                   );
                 })}
-              </div>
+              </motion.div>
             )}
-          </article>
+            </AnimatePresence>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

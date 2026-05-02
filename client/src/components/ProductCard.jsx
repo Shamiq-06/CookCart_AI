@@ -1,12 +1,18 @@
 import { Plus } from "lucide-react";
 import { motion } from "framer-motion";
 import { useCart } from "../context/CartContext";
+import { buttonMotion, staggerItem } from "../utils/animations";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
 
   return (
-    <motion.article layout className="panel overflow-hidden" whileHover={{ y: -4 }}>
+    <motion.article
+      layout
+      className="panel overflow-hidden transition-shadow hover:border-emerald-100 hover:shadow-soft"
+      variants={staggerItem}
+      whileHover={{ y: -6 }}
+    >
       <img className="h-44 w-full object-cover" src={product.image} alt={product.name} />
       <div className="space-y-3 p-4">
         <div>
@@ -16,10 +22,10 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="flex items-center justify-between">
           <span className="font-bold text-leaf">${product.price.toFixed(2)} / {product.unit}</span>
-          <button className="btn-primary px-3" onClick={() => addToCart({ productId: product._id, quantity: 1 })}>
+          <motion.button {...buttonMotion} className="btn-primary px-3" onClick={() => addToCart({ productId: product._id, quantity: 1 })}>
             <Plus className="h-4 w-4" />
             Add
-          </button>
+          </motion.button>
         </div>
       </div>
     </motion.article>
