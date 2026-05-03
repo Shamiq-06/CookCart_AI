@@ -9,8 +9,18 @@ const Navbar = () => {
   const { user, logout, isAdmin } = useAuth();
   const { cart } = useCart();
   const count = cart.items.reduce((sum, item) => sum + item.quantity, 0);
+  const navItems = [
+    ["AI Planner", "/ai-planner", true],
+    ["Groceries", "/products", true],
+    ["Orders", "/orders", Boolean(user)],
+    ["Admin", "/admin", isAdmin]
+  ];
   const linkClass = ({ isActive }) =>
     `text-sm font-medium transition ${isActive ? "text-leaf" : "text-slate-600 hover:text-leaf"}`;
+  const mobileLinkClass = ({ isActive }) =>
+    `shrink-0 rounded-md px-3 py-2 text-sm font-semibold transition ${
+      isActive ? "bg-emerald-50 text-leaf" : "text-slate-600 hover:bg-slate-50 hover:text-leaf"
+    }`;
 
   return (
     <motion.header
@@ -27,12 +37,7 @@ const Navbar = () => {
         </Link>
         </motion.div>
         <div className="hidden items-center gap-5 md:flex">
-          {[
-            ["AI Planner", "/ai-planner", true],
-            ["Groceries", "/products", true],
-            ["Orders", "/orders", Boolean(user)],
-            ["Admin", "/admin", isAdmin]
-          ].map(([label, to, show]) => show && (
+          {navItems.map(([label, to, show]) => show && (
             <motion.div key={to} whileHover={{ y: -1 }} whileTap={{ scale: 0.97 }}>
               <NavLink className={linkClass} to={to}>{label}</NavLink>
             </motion.div>
@@ -59,6 +64,13 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+      <div className="border-t border-slate-100 md:hidden">
+        <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-2">
+          {navItems.map(([label, to, show]) => show && (
+            <NavLink key={to} className={mobileLinkClass} to={to}>{label}</NavLink>
+          ))}
+        </div>
+      </div>
     </motion.header>
   );
 };
