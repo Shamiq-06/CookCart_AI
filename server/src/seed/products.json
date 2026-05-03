@@ -1,0 +1,950 @@
+[{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c3b"
+  },
+  "name": "Rice",
+  "category": "Grains",
+  "price": 2.5,
+  "image": "/images/products/rice.png",
+  "stock": 100,
+  "unit": "1 kg",
+  "description": "Premium white rice for daily meals.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.877Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.612Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c3c"
+  },
+  "name": "Chicken",
+  "category": "Meat",
+  "price": 6.75,
+  "image": "/images/products/chicken.png",
+  "stock": 50,
+  "unit": "1 kg",
+  "description": "Fresh chicken cuts for curries and fried rice.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.644Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c3d"
+  },
+  "name": "Egg",
+  "category": "Dairy",
+  "price": 0.35,
+  "image": "/images/products/egg.png",
+  "stock": 200,
+  "unit": "piece",
+  "description": "Farm fresh eggs.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c3e"
+  },
+  "name": "Onion",
+  "category": "Vegetables",
+  "price": 1.2,
+  "image": "/images/products/onion.png",
+  "stock": 80,
+  "unit": "1 kg",
+  "description": "Aromatic onions for cooking bases.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c3f"
+  },
+  "name": "Tomato",
+  "category": "Vegetables",
+  "price": 1.4,
+  "image": "/images/products/tomato.png",
+  "stock": 70,
+  "unit": "1 kg",
+  "description": "Juicy tomatoes for sauces and salads.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.655Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c40"
+  },
+  "name": "Potato",
+  "category": "Vegetables",
+  "price": 1.1,
+  "image": "/images/products/potato.png",
+  "stock": 90,
+  "unit": "1 kg",
+  "description": "Versatile potatoes for every kitchen.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.657Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c41"
+  },
+  "name": "Carrot",
+  "category": "Vegetables",
+  "price": 1.6,
+  "image": "/images/products/carrot.png",
+  "stock": 75,
+  "unit": "1 kg",
+  "description": "Crunchy carrots rich in color and nutrients.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.658Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c42"
+  },
+  "name": "Milk",
+  "category": "Dairy",
+  "price": 1.8,
+  "image": "/images/products/milk.png",
+  "stock": 60,
+  "unit": "1 L",
+  "description": "Fresh milk for tea, coffee, and recipes.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.663Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c43"
+  },
+  "name": "Bread",
+  "category": "Bakery",
+  "price": 2,
+  "image": "/images/products/bread.png",
+  "stock": 40,
+  "unit": "loaf",
+  "description": "Soft sandwich bread.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.667Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c44"
+  },
+  "name": "Cheese",
+  "category": "Dairy",
+  "price": 3.9,
+  "image": "/images/products/cheese.png",
+  "stock": 35,
+  "unit": "pack",
+  "description": "Creamy cheese for snacks and pasta.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.671Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c45"
+  },
+  "name": "Pasta",
+  "category": "Grains",
+  "price": 2.25,
+  "image": "/images/products/pasta.png",
+  "stock": 65,
+  "unit": "500 g",
+  "description": "Dry pasta for quick dinners.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.673Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c46"
+  },
+  "name": "Noodles",
+  "category": "Grains",
+  "price": 1.75,
+  "image": "/images/products/noodles.png",
+  "stock": 85,
+  "unit": "pack",
+  "description": "Quick-cooking noodles.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.674Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4b094537d64605b378c47"
+  },
+  "name": "Spices",
+  "category": "Pantry",
+  "price": 2.8,
+  "image": "/images/products/spices.png",
+  "stock": 55,
+  "unit": "pack",
+  "description": "Mixed spices for flavorful dishes.",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-01T13:54:28.878Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.676Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f14a"
+  },
+  "name": "Apples",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.677Z"
+  },
+  "description": "Crisp red apples for snacks and desserts.",
+  "image": "/images/products/apples.png",
+  "price": 3.2,
+  "stock": 90,
+  "unit": "1 kg",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.677Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f14b"
+  },
+  "name": "Bananas",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.684Z"
+  },
+  "description": "Sweet ripe bananas for smoothies and breakfast.",
+  "image": "/images/products/bananas.png",
+  "price": 1.6,
+  "stock": 120,
+  "unit": "1 kg",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.684Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f14c"
+  },
+  "name": "Oranges",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.686Z"
+  },
+  "description": "Juicy oranges packed with bright citrus flavor.",
+  "image": "/images/products/oranges.png",
+  "price": 2.9,
+  "stock": 85,
+  "unit": "1 kg",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.686Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f14d"
+  },
+  "name": "Grapes",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.688Z"
+  },
+  "description": "Fresh grapes for snacking and fruit bowls.",
+  "image": "/images/products/grapes.png",
+  "price": 4.5,
+  "stock": 55,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.688Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f14e"
+  },
+  "name": "Lettuce",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.690Z"
+  },
+  "description": "Leafy lettuce for salads, wraps, and sandwiches.",
+  "image": "/images/products/lettuce.png",
+  "price": 1.9,
+  "stock": 65,
+  "unit": "head",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.690Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f14f"
+  },
+  "name": "Cucumber",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.692Z"
+  },
+  "description": "Cool cucumbers for salads and fresh sides.",
+  "image": "/images/products/cucumber.png",
+  "price": 1.3,
+  "stock": 80,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.692Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f150"
+  },
+  "name": "Bell Pepper",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.696Z"
+  },
+  "description": "Colorful bell peppers for stir-fries and salads.",
+  "image": "/images/products/bell-pepper.png",
+  "price": 2.7,
+  "stock": 70,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.696Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f151"
+  },
+  "name": "Broccoli",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.706Z"
+  },
+  "description": "Fresh broccoli florets for healthy meals.",
+  "image": "/images/products/broccoli.png",
+  "price": 2.4,
+  "stock": 60,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.706Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f152"
+  },
+  "name": "Cauliflower",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.715Z"
+  },
+  "description": "Tender cauliflower for curries, roasts, and sides.",
+  "image": "/images/products/cauliflower.png",
+  "price": 2.6,
+  "stock": 55,
+  "unit": "head",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.715Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f153"
+  },
+  "name": "Spinach",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.720Z"
+  },
+  "description": "Fresh spinach leaves for cooking and salads.",
+  "image": "/images/products/spinach.png",
+  "price": 1.8,
+  "stock": 75,
+  "unit": "bunch",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.720Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f154"
+  },
+  "name": "Garlic",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.722Z"
+  },
+  "description": "Aromatic garlic bulbs for everyday cooking.",
+  "image": "/images/products/garlic.png",
+  "price": 1.1,
+  "stock": 95,
+  "unit": "100 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.722Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f155"
+  },
+  "name": "Ginger",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.723Z"
+  },
+  "description": "Fresh ginger root for spice, tea, and marinades.",
+  "image": "/images/products/ginger.png",
+  "price": 1.4,
+  "stock": 80,
+  "unit": "250 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.723Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f156"
+  },
+  "name": "Beef",
+  "__v": 0,
+  "category": "Meat",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.725Z"
+  },
+  "description": "Fresh beef cuts for steaks, curries, and stews.",
+  "image": "/images/products/beef.png",
+  "price": 9.5,
+  "stock": 35,
+  "unit": "1 kg",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f157"
+  },
+  "name": "Fish",
+  "__v": 0,
+  "category": "Seafood",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.726Z"
+  },
+  "description": "Fresh whole fish for grilling and curries.",
+  "image": "/images/products/fish.png",
+  "price": 7.8,
+  "stock": 40,
+  "unit": "1 kg",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f158"
+  },
+  "name": "Shrimp",
+  "__v": 0,
+  "category": "Seafood",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.727Z"
+  },
+  "description": "Clean shrimp for quick seafood dishes.",
+  "image": "/images/products/shrimp.png",
+  "price": 8.6,
+  "stock": 45,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.727Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f159"
+  },
+  "name": "Yogurt",
+  "__v": 0,
+  "category": "Dairy",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.728Z"
+  },
+  "description": "Plain creamy yogurt for breakfast and sauces.",
+  "image": "/images/products/yogurt.png",
+  "price": 2.2,
+  "stock": 50,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.728Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f15a"
+  },
+  "name": "Butter",
+  "__v": 0,
+  "category": "Dairy",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.729Z"
+  },
+  "description": "Creamy butter for baking and cooking.",
+  "image": "/images/products/butter.png",
+  "price": 3.4,
+  "stock": 45,
+  "unit": "250 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.729Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f15b"
+  },
+  "name": "Flour",
+  "__v": 0,
+  "category": "Pantry",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.731Z"
+  },
+  "description": "All-purpose flour for baking and batters.",
+  "image": "/images/products/flour.png",
+  "price": 1.9,
+  "stock": 100,
+  "unit": "1 kg",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.731Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f15c"
+  },
+  "name": "Sugar",
+  "__v": 0,
+  "category": "Pantry",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.742Z"
+  },
+  "description": "White sugar for drinks, desserts, and baking.",
+  "image": "/images/products/sugar.png",
+  "price": 1.7,
+  "stock": 100,
+  "unit": "1 kg",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.742Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f15d"
+  },
+  "name": "Salt",
+  "__v": 0,
+  "category": "Pantry",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.746Z"
+  },
+  "description": "Kitchen salt for seasoning daily meals.",
+  "image": "/images/products/salt.png",
+  "price": 0.8,
+  "stock": 120,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.746Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f15e"
+  },
+  "name": "Cooking Oil",
+  "__v": 0,
+  "category": "Pantry",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.749Z"
+  },
+  "description": "Cooking oil for frying, sauteing, and meal prep.",
+  "image": "/images/products/cooking-oil.png",
+  "price": 4.2,
+  "stock": 70,
+  "unit": "1 L",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.749Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f15f"
+  },
+  "name": "Tea",
+  "__v": 0,
+  "category": "Beverages",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.755Z"
+  },
+  "description": "Rich tea for a warm daily cup.",
+  "image": "/images/products/tea.png",
+  "price": 3.1,
+  "stock": 60,
+  "unit": "pack",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.755Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f160"
+  },
+  "name": "Coffee",
+  "__v": 0,
+  "category": "Beverages",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.758Z"
+  },
+  "description": "Bold coffee for mornings and desserts.",
+  "image": "/images/products/coffee.png",
+  "price": 5.4,
+  "stock": 55,
+  "unit": "pack",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.758Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f161"
+  },
+  "name": "Lentils",
+  "__v": 0,
+  "category": "Pantry",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.760Z"
+  },
+  "description": "Nutritious lentils for soups, dhal, and curries.",
+  "image": "/images/products/lentils.png",
+  "price": 2,
+  "stock": 90,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.760Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f162"
+  },
+  "name": "Chickpeas",
+  "__v": 0,
+  "category": "Pantry",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.762Z"
+  },
+  "description": "Hearty chickpeas for salads, hummus, and curries.",
+  "image": "/images/products/chickpeas.png",
+  "price": 2.3,
+  "stock": 85,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.762Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f163"
+  },
+  "name": "Oats",
+  "__v": 0,
+  "category": "Grains",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.764Z"
+  },
+  "description": "Rolled oats for breakfast bowls and baking.",
+  "image": "/images/products/oats.png",
+  "price": 2.6,
+  "stock": 70,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.764Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f164"
+  },
+  "name": "Cereal",
+  "__v": 0,
+  "category": "Grains",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.767Z"
+  },
+  "description": "Crunchy cereal for quick breakfast.",
+  "image": "/images/products/cereal.png",
+  "price": 3.8,
+  "stock": 55,
+  "unit": "box",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.767Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f165"
+  },
+  "name": "Mushrooms",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.769Z"
+  },
+  "description": "Fresh mushrooms for soups, pasta, and stir-fries.",
+  "image": "/images/products/mushrooms.png",
+  "price": 3.2,
+  "stock": 45,
+  "unit": "250 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.769Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f166"
+  },
+  "name": "Green Beans",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.771Z"
+  },
+  "description": "Tender green beans for sides and curries.",
+  "image": "/images/products/green-beans.png",
+  "price": 2.2,
+  "stock": 65,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.771Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f167"
+  },
+  "name": "Peas",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.771Z"
+  },
+  "description": "Sweet green peas for rice, curries, and soups.",
+  "image": "/images/products/peas.png",
+  "price": 2.1,
+  "stock": 70,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.771Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f168"
+  },
+  "name": "Corn",
+  "__v": 0,
+  "category": "Vegetables",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.772Z"
+  },
+  "description": "Sweet corn kernels for snacks and sides.",
+  "image": "/images/products/corn.png",
+  "price": 2,
+  "stock": 75,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.772Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f169"
+  },
+  "name": "Avocado",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.773Z"
+  },
+  "description": "Creamy avocado for toast, salads, and bowls.",
+  "image": "/images/products/avocado.png",
+  "price": 2.8,
+  "stock": 50,
+  "unit": "piece",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.773Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f16a"
+  },
+  "name": "Lemon",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.774Z"
+  },
+  "description": "Fresh lemons for juice, marinades, and tea.",
+  "image": "/images/products/lemon.png",
+  "price": 1.5,
+  "stock": 85,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.774Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f16b"
+  },
+  "name": "Lime",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.774Z"
+  },
+  "description": "Zesty limes for drinks, dressings, and seafood.",
+  "image": "/images/products/lime.png",
+  "price": 1.4,
+  "stock": 85,
+  "unit": "500 g",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.774Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f16c"
+  },
+  "name": "Mango",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.775Z"
+  },
+  "description": "Sweet mangoes for desserts and smoothies.",
+  "image": "/images/products/mango.png",
+  "price": 3.6,
+  "stock": 60,
+  "unit": "1 kg",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.775Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f16d"
+  },
+  "name": "Pineapple",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.776Z"
+  },
+  "description": "Tropical pineapple for juices and fruit plates.",
+  "image": "/images/products/pineapple.png",
+  "price": 3.9,
+  "stock": 35,
+  "unit": "piece",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.776Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69f4cf7a13332d42aca7f16e"
+  },
+  "name": "Watermelon",
+  "__v": 0,
+  "category": "Fruits",
+  "createdAt": {
+    "$date": "2026-05-01T16:06:18.777Z"
+  },
+  "description": "Refreshing watermelon for sharing and summer snacks.",
+  "image": "/images/products/watermelon.png",
+  "price": 4.2,
+  "stock": 30,
+  "unit": "piece",
+  "updatedAt": {
+    "$date": "2026-05-01T16:06:18.777Z"
+  }
+}]

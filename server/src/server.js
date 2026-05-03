@@ -15,7 +15,18 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || ["http://localhost:5173", "http://localhost:5175", "http://0.0.0.0:5175"], credentials: true }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5175",
+  "http://0.0.0.0:5175",
+  "https://cookcart-ai.netlify.app"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
